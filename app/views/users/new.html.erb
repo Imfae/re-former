@@ -1,12 +1,16 @@
 <h1>Create your user here!</h1>
-<form action="/users" method="post" accept-charset="UTF-8" data-turbo="false">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-    <label for="username">Username</label>
-    <input type="text" id="username" name="user[username]"><br>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="user[email]"><br>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="user[password]">
-    <input type="submit" value="Submit">
-</form>
+<%= form_with model: User.new do |form| %>
+<div>
+    <%= form.label :username%>
+    <%= form.text_field :username%>
+</div>
+<div>
+    <%= form.label :email%>
+    <%= form.email_field :email%>
+</div>
+<div>
+    <%= form.label :password%>
+    <%= form.password_field :password%>
+</div>
+<div><%= form.submit%></div>
+<% end %>
