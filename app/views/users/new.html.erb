@@ -1,4 +1,16 @@
 <h1>Create your user here!</h1>
+<!-- <form action="/users" method="post" accept-charset="UTF-8" data-turbo="false">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="user[username]"><br>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="user[email]"><br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="user[password]">
+    <input type="submit" value="Submit">
+</form> -->
+
 <div>
     <% if !@user.errors.empty? %>
         <% @user.errors.full_messages.each do |message| %>
@@ -21,3 +33,20 @@
 </div>
 <div><%= form.submit%></div>
 <% end %>
+
+<!-- <%= form_tag '/users' %>
+<div>
+    <%= label_tag 'username' %>
+    <%= text_field_tag 'username' %>
+</div>
+<div>
+    <%= label_tag 'email' %>
+    <%= email_field_tag 'email' %>
+</div>
+<div>
+    <%= label_tag 'password' %>
+    <%= password_field_tag 'password' %>
+</div>
+<div>
+    <%= submit_tag 'Submit' %>
+</div> -->
