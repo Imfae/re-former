@@ -1,0 +1,16 @@
+<h1>Create your user here!</h1>
+<%= form_with model: @user do |form| %>
+<div>
+    <%= form.label :username, 'Your user name:' %>
+    <%= form.text_field :username, placeholder: 'Random username' %>
+</div>
+<div>
+    <%= form.label :email, 'Your email:' %>
+    <%= form.email_field :email, placeholder: 'abc@gmail.com' %>
+</div>
+<div>
+    <%= form.label :password, 'Your password:' %>
+    <%= form.password_field :password %>
+</div>
+<div><%= form.submit%></div>
+<% end %>
