@@ -1,5 +1,12 @@
 <h1>Create your user here!</h1>
-<%= form_with model: User.new do |form| %>
+<div>
+    <% if !@user.errors.empty? %>
+        <% @user.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    <% end %>
+</div>
+<%= form_with model: @user do |form| %>
 <div>
     <%= form.label :username, 'Your user name:' %>
     <%= form.text_field :username, placeholder: 'Random username', value: 'First user' %>
